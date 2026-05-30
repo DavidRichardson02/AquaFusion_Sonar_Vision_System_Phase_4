@@ -356,17 +356,6 @@ treated as an HDMI rendering dependency.
 9. Use `SW1 = 1` during sonar bring-up to publish raw sonar samples.
 10. Use `SW2` to compare painter brush behavior once samples are accepted.
 
-## Verification Notes
-
-Recent targeted Vivado checks used:
-
-```powershell
-xvlog --incr --relax <changed RTL files>
-xelab --relax -L xpm -L unisims_ver -L unimacro_ver -L secureip work.aquafusion_nexys_video_top work.glbl
-```
-
-The edited HDMI/rendering path parsed and elaborated successfully. Existing
-warnings remain in unrelated text/HUD width connections.
 
 ## Known Limitations
 
@@ -400,25 +389,3 @@ Important files:
 | `vga_uart_terminal_overlay.v` | UART terminal renderer. |
 | `hdmi_tx_wrapper_rgb2dvi.v` | HDMI/TMDS output wrapper. |
 | `oled_telemetry_pack_sys.v` | SYS-domain OLED text telemetry packer. |
-
-## GitHub Publishing Notes
-
-The remote repository currently exists at:
-
-```text
-https://github.com/DavidRichardson02/AquaFusion_Sonar_Vision_System_Phase_4
-```
-
-If Git for Windows is installed locally, publish the source tree with:
-
-```powershell
-git init
-git branch -M main
-git remote add origin https://github.com/DavidRichardson02/AquaFusion_Sonar_Vision_System_Phase_4.git
-git add README.md .gitignore AquaFusion_Sonar_Vision_System_Phase_4.xpr AquaFusion_Sonar_Vision_System_Phase_4.srcs/sources_1/new AquaFusion_Sonar_Vision_System_Phase_4.srcs/constrs_1/new rtl docs tools
-git commit -m "Initial Vivado project import"
-git push -u origin main
-```
-
-Do not add generated Vivado output directories unless there is a specific
-release-artifact reason to do so.
