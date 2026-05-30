@@ -1,0 +1,39 @@
+# Vivado generated state
+.Xil/
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.wcfg
+*.backup.*
+
+# Vivado build outputs
+*.runs/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.sim/
+xsim.dir/
+
+# Temporary probe/output folders
+_tmp*/
+.vivado_probe/
+
+# Generated simulation artifacts
+webtalk*.jou
+webtalk*.log
+xvlog.log
+xelab.log
+xsim.log
+xvlog.pb
+xelab.pb
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.bak
